@@ -10,7 +10,13 @@
       <input formControlName="nombre" class="form-control" type="text" />
     </div>
     <div class="col-auto">
-      <span *ngIf="campoNoValido('nombre')" class="form-text">
+      <!-- error-msg y color son propiedades de una directiva -->
+      <span
+        *ngIf="campoNoValido('nombre')"
+        class="form-text"
+        color="#f00"
+        error-msg
+      >
         Este campo es requerido
       </span>
     </div>
