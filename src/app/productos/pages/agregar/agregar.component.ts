@@ -24,10 +24,11 @@ export class AgregarComponent {
   }
 
   cambiarNombre (): void {
-    this.texto1 = 'Juan Pepito'
+    this.texto1 = Math.random().toString()
   }
 
   cambiarColor (): void {
-    this.color = 'green'
+    const color = '#xxxxxx'.replace(/x/g, y => (Math.random() * 16 | 0).toString(16))
+    this.color = color
   }
 }

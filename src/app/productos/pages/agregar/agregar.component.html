@@ -1,6 +1,4 @@
-<h1 class="mt-5">
-  Agregar Producto <small>{{ texto1 }} </small>
-</h1>
+<h1 class="mt-5">Agregar Producto</h1>
 <hr />
 
 <form [formGroup]="miFormulario">
@@ -15,9 +13,8 @@
       <!-- mensaje y color son propiedades de la directiva error-msg  -->
       <span
         *ngIf="campoNoValido('nombre')"
-        class="form-text"
-        [color]="color"
         error-msg
+        [color]="color"
         [mensaje]="texto1"
       >
         Este campo es requerido
@@ -30,7 +27,7 @@
       <button (click)="cambiarNombre()" class="btn btn-primary">Guardar</button>
       &nbsp;
       <button (click)="cambiarColor()" class="btn btn-primary">
-        cambiarColor
+        Cambiar Color
       </button>
     </div>
   </div>
