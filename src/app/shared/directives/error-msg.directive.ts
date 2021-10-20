@@ -10,16 +10,27 @@ export class ErrorMsgDirective implements OnInit {
 
   htmlElement: ElementRef<HTMLElement>
 
-  // se ejecuta si cambia el mensaje por parte del padre
+  // se ejecuta, si cambia el MENSAJE por parte del padre
   @Input() set mensaje (valor: string) {
     this._mensaje = valor
     this.setMensaje()
   }
 
-  // se ejecuta si cambia el color por parte del padre
+  // se ejecuta, si cambia el COLOR por parte del padre
   @Input() set color (valor: string) {
     this._color = valor
     this.setColor()
+  }
+
+  // se ejecuta, si cambia el valor del metodo VALIDO por el padre
+  @Input() set valido (valor: boolean) {
+    if (valor) {
+      // se cumple, si el campo es valido add la clase 'hidden'
+      this.htmlElement.nativeElement.classList.add('hidden')
+    } else {
+      // se cumple, si el campo es invalido
+      this.htmlElement.nativeElement.classList.remove('hidden')
+    }
   }
 
   constructor (private readonly el: ElementRef<HTMLElement>) {

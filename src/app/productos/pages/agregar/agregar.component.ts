@@ -14,13 +14,11 @@ export class AgregarComponent {
     nombre: ['', Validators.required]
   })
 
-  constructor (
-    private readonly fb: FormBuilder
-  ) { }
+  constructor (private readonly fb: FormBuilder) { }
 
   campoNoValido (campo: string): boolean {
     return this.miFormulario.controls[campo]?.invalid &&
-    this.miFormulario.controls[campo].touched
+      this.miFormulario.controls[campo]?.touched
   }
 
   cambiarNombre (): void {
